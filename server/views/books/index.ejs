@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <h3>Favourite Books List </h3>
-          <a href="/server/views/books/details.ejs" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
+          <a href="/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <br>
           <div class="table-responsive">
             <table class="table table-bordered table-striped table-hover">
@@ -31,13 +31,13 @@
                   <td class="text-center"><%= BookList[count].Genre %></td>
 
                   <td class="text-center">
-                      <a href="/server/views//books/details.ejs BookList[count]._id %>" class="btn btn-primary">
+                      <a href="/edit/:id" BookList[count]._id %>" class="btn btn-primary">
                       <i class="fas fa-pencil-alt"></i> Edit</a>
                     </td>
                   </td>
 
                   <td class="text-center">
-                    <a href="/server/views//books/details.ejs <%= BookList[count]._id %>" class="btn btn-danger">
+                    <a href="/delete/:id" <%= BookList[count]._id %>" class="btn btn-danger">
                       <i class="fas fa-trash alt"></i> Delete</a>
                   </td>
                   </td>

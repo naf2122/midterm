@@ -30,4 +30,25 @@ router.get('/details', (req, res, next) => {
    });
 });
 
+router.get('/add', (req, res, next) => {
+  res.render('books/details', {
+    title: 'Add a Book',
+    books:''
+  });
+});
+
+router.get('/edit/:id', (req, res, next) => {
+  res.render('books/details', {
+    title: 'Edit a Book',
+    books:''
+  });
+});
+
+router.get('/delete/:id', (req, res, next) => {
+  res.render('books/details', {
+    title: 'Delete a Book',
+    books:''
+  });
+});
+
 module.exports = router;

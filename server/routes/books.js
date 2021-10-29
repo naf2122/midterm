@@ -26,14 +26,14 @@ router.get('/', (req, res, next) => {
 
 
 //  GET the Book Details page in order to add a new Book
-router.get('/details', (req, res, next) => {
+router.get('/add', (req, res, next) => {
     res.render('books/details', {title: 'Add a book'})
       
 
 });
 
 // POST process the Book Details page and create a new Book - CREATE
-router.post('/details', (req, res, next) => {
+router.post('/add', (req, res, next) => {
   let newBook = Book({
     "title": req.body.title,
     "description": req.body.description,
@@ -55,7 +55,7 @@ book.create(newBook, (err, book) =>{
 });
 
 // GET the Book Details page in order to edit an existing Book
-router.get('/index/edit/:id', (req, res, next) => {
+router.get('/edit/:id', (req, res, next) => {
   let id = req.params.id;
 
   book.findById(id, (err, bookToEdit) => {
@@ -72,7 +72,7 @@ router.get('/index/edit/:id', (req, res, next) => {
 });
 
 // POST - process the information passed from the details form and update the document
-router.post('/:id', (req, res, next) => {
+router.post('/edit', (req, res, next) => {
   let id = req.params.id
   
   let updatedBook = book({
@@ -97,7 +97,7 @@ router.post('/:id', (req, res, next) => {
 });
 
 // GET - process the delete by user id
-router.get('/delete/:id', (req, res, next) => {
+router.get('/delete', (req, res, next) => {
   let id = req.params.id
 
   book,remove({_id: id}, (err) => {
